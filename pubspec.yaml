@@ -2,7 +2,7 @@ name: otel_auth0
 description: >-
   OpenTelemetry instrumentation for auth0 by Dartastic.io. Adds standard
   OpenTelemetry observability to applications that use auth0.
-version: 0.1.0-wip
+version: 0.1.0
 repository: https://github.com/dartastic/otel_auth0
 homepage: https://dartastic.io
 

@@ -5,14 +5,17 @@ import 'dart:async';
 
 const Symbol _suppressKey = #dartastic_otel_libs_auth0_suppress;
 
+/// Whether instrumentation is suppressed in the current zone.
 bool auth0InstrumentationSuppressed() {
   return Zone.current[_suppressKey] == true;
 }
 
+/// Runs [body] without creating spans for calls made inside it.
 T runWithoutAuth0Instrumentation<T>(T Function() body) {
   return runZoned(body, zoneValues: {_suppressKey: true});
 }
 
+/// Runs [body] without creating spans for calls made inside it.
 Future<T> runWithoutAuth0InstrumentationAsync<T>(
   Future<T> Function() body,
 ) {
